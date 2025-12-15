@@ -1,0 +1,4 @@
+Devcontainerを最低限動かすためのテンプレート。
+例ではPythonのイメージを利用していますが、Dockerfileを編集していただければ、
+いろいろと応用が利きます。
+※pre-commitはPythonでインストールするため、別のイメージを使うときは別途Pythonを入れてください

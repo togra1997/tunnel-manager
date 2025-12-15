@@ -1,0 +1,33 @@
+{
+	"name": "example", // コンテナ名
+	"dockerComposeFile": "docker-compose.yml", // docker-composeファイルのパス
+	"service": "app", // 使用するサービス名
+	"workspaceFolder": "/app", // ワークスペースのパス
+
+	// VScodeの設定
+	"customizations": {
+		"vscode": {
+			// 拡張機能のインストール
+			"extensions": [
+				"usernamehw.errorlens", // ErrorLens
+				"ms-python.python", // Python拡張機能
+				"charliermarsh.ruff" // Ruff拡張機能
+			],
+			// 拡張機能の設定
+			"settings": {
+				"notebook.formatOnSave.enabled": true,
+				"[python]": {
+					"editor.defaultFormatter": "charliermarsh.ruff",
+					"editor.codeActionsOnSave": {
+						"source.fixAll": true,
+						"source.organizeImports": true
+					},
+					"notebook.codeActionsOnSave": {
+						"notebook.source.fixAll": true
+					}
+				}
+			}
+		}
+	},
+	"postCreateCommand": "pre-commit install"
+}
